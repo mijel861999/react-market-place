@@ -2,25 +2,23 @@ import { ThemeProvider } from 'styled-components'
 
 const themeValues = {
   fontSizes: {
-    small: '1em',
+    small: '1.4em',
     medium: '2em',
-    large: '3em'
+    large: '2.5em'
   }
 }
 
 export const lightTheme = {
-  body: '#FFF',
   text: '#363537',
   toggleBorder: '#FFF',
-  background: '#363537',
+  background: '#FAFAFA',
   ...themeValues
 }
 
 export const darkTheme = {
-  body: '#363537',
   text: '#FAFAFA',
   toggleBorder: '#6B8096',
-  background: '#999',
+  background: '#363537',
   ...themeValues
 }
 
