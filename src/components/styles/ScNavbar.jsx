@@ -31,6 +31,10 @@ export const ScNameContainer = styled.div`
 `
 
 export const ScNavbarOpenContainer = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.background};
   color: ${({theme}) => theme.text};
   border-right: 1px solid ${({ theme }) => theme.colors.grey};

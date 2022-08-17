@@ -5,12 +5,16 @@ import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu'
 import { AiOutlineShoppingCart } from '@react-icons/all-files/ai/aioutlineshoppingcart'
 
 import { ScNavbar, ButtonIcon, ScNameContainer, ScNavbarOpenContainer } from './styles/ScNavbar'
+import { ScButton } from '../theme/components'
 import ToggleThemeButton from './toggle-theme-button'
 
 const NavbarOpen = ({ setIsOpen }) => {
   return (
     <ScNavbarOpenContainer>
-      <button onClick={() => setIsOpen(value => !value)}>x</button>
+      <ScButton onClick={() => setIsOpen(value => !value)}>x</ScButton>
+      <Link to='/'>Hola</Link>
+      <Link to='/'>Hola</Link>
+      <Link to='/'>Hola</Link>
     </ScNavbarOpenContainer>
   )
 }
