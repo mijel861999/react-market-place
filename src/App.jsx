@@ -3,18 +3,17 @@ import Theme from './theme/theme'
 import GlobalStyles from './theme/globalStyles'
 import { darkTheme, lightTheme } from './theme/theme'
 import AppRouter from './router/AppRouter'
-import './App.css'
+import AppProvider from './AppProvider'
+import { useAppContext } from './AppProvider'
 
 function App() {
-  const [theme, setTheme] = useState('light')
-  
+  const { theme } = useAppContext()
+
   return (
-    <div className="App">
-      <Theme theme={ theme === 'light' ? darkTheme : lightTheme  }>
-        <GlobalStyles /> 
-        <AppRouter setTheme={setTheme} theme={theme} />
-      </Theme>  
-    </div>
+    <Theme theme={ theme === 'dark' ? darkTheme : lightTheme  }>
+      <GlobalStyles /> 
+      <AppRouter />
+    </Theme>  
   )
 }
 

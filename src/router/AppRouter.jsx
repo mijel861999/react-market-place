@@ -12,10 +12,10 @@ const ScApp = styled.div`
   background-color: ${({ theme }) => theme.background};
 `
 
-const AppRouter = ({ setTheme, theme }) => {
+const AppRouter = () => {
   return (
     <Router>
-      <Navbar setTheme={setTheme} theme={theme} />
+      <Navbar />
       <ScApp>
         <Routes>
           <Route index path='/' element={<Main />} />

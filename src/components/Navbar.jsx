@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { WiDaySunny } from '@react-icons/all-files/wi/WiDaySunny'
 import { BiMoon } from '@react-icons/all-files/bi/BiMoon'
 import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu'
 import { AiOutlineShoppingCart } from '@react-icons/all-files/ai/aioutlineshoppingcart'
+import { useAppContext } from '../AppProvider'
 
 const ScNavbar = styled.nav`
   background: ${({ theme }) => theme.background};
@@ -33,16 +35,25 @@ const ScNameContainer = styled.div`
   align-items: center;
 `
 
-const ToggleButtonTheme = ({ setTheme, theme }) => {
-  const changeTeam = () => {
-    setTheme(theme => {
-      if(theme==='light') return 'dark'
-      else return 'light'
-    })
+const ToggleButtonTheme = () => {
+  const { theme, dispatch } = useAppContext()
+
+  const changeTheme = () => {
+    if (theme === 'dark') {
+      dispatch({
+        type: 'CHANGE_THEME',
+        value: 'light'
+      })
+    } else {
+      dispatch({
+        type: 'CHANGE_THEME',
+        value: 'dark'
+      })
+    }
   }
 
   return (
-    <ScIconButton onClick={changeTeam} style={{ paddingLeft: '15px', marginTop: '4px' }}>
+    <ScIconButton onClick={changeTheme} style={{ paddingLeft: '15px', marginTop: '4px' }}>
       <ScIcon>
         {theme === 'light' ? <BiMoon /> : <WiDaySunny/>}
       </ScIcon>
@@ -60,7 +71,7 @@ const ButtonIcon = ({ icon }) => {
   )
 }
 
-const Navbar = ({ setTheme, theme }) => {
+const Navbar = () => {
   return (
     <ScNavbar>
       <ButtonIcon
@@ -68,11 +79,13 @@ const Navbar = ({ setTheme, theme }) => {
       /> 
       <ScNameContainer>
         <h1>Hola, Miguel</h1>
-        <ToggleButtonTheme setTheme={setTheme} theme={theme} /> 
+        <ToggleButtonTheme /> 
       </ScNameContainer>
-      <ButtonIcon
-        icon={<AiOutlineShoppingCart />}
-      />
+      <Link to='/cart'>
+        <ButtonIcon
+          icon={<AiOutlineShoppingCart />}
+        />
+      </Link>
     </ScNavbar>
   )
 }
