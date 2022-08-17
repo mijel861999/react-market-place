@@ -5,6 +5,9 @@ const themeValues = {
     small: '1.4em',
     medium: '2em',
     large: '2.5em'
+  },
+  colors: {
+    grey: '#B1B1B1'
   }
 }
 
