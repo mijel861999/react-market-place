@@ -7,7 +7,8 @@ const themeValues = {
     large: '2.5em'
   },
   colors: {
-    grey: '#B1B1B1'
+    grey: '#B1B1B1',
+    blue: '#0066CC'
   }
 }
 

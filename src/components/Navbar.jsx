@@ -14,6 +14,21 @@ const ScLinkNav = styled(Link)`
   margin: 5px 20px;
 `
 
+const ScCartNumber = styled.div`
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: ${({ theme }) => theme.fontSizes.small};
+  height: 30px;
+  width: 30px;
+  color: white;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.blue};
+`
+
 const NavbarOpen = ({ setIsOpen }) => {
   return (
     <ScNavbarOpenContainer>
@@ -45,10 +60,15 @@ const Navbar = () => {
         <h1>Hola, Miguel</h1>
         <ToggleThemeButton /> 
       </ScNameContainer>
-      <Link to='/cart'>
-        <ButtonIcon
-          icon={<AiOutlineShoppingCart />}
-        />
+      <Link 
+        style={{
+          position: 'static'
+        }}
+        to='/cart'>
+          <ScCartNumber>10</ScCartNumber>
+          <ButtonIcon
+            icon={<AiOutlineShoppingCart />}
+          />
       </Link>
       {
         isOpen &&
