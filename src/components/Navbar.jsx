@@ -8,13 +8,26 @@ import { ScNavbar, ButtonIcon, ScNameContainer, ScNavbarOpenContainer } from './
 import { ScButton } from '../theme/components'
 import ToggleThemeButton from './toggle-theme-button'
 
+const ScLinkNav = styled(Link)`
+  color: ${({ theme }) => theme.text};
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  margin: 5px 20px;
+`
+
 const NavbarOpen = ({ setIsOpen }) => {
   return (
     <ScNavbarOpenContainer>
-      <ScButton onClick={() => setIsOpen(value => !value)}>x</ScButton>
-      <Link to='/'>Hola</Link>
-      <Link to='/'>Hola</Link>
-      <Link to='/'>Hola</Link>
+      <ScButton
+        onClick={() => setIsOpen(value => !value)}
+        style={{
+          alignSelf: 'flex-start'
+        }}
+      >
+        x
+      </ScButton>
+      <ScLinkNav to='/'>Redes Sociales</ScLinkNav>
+      <ScLinkNav to='/'>Productos</ScLinkNav>
+      <ScLinkNav to='/cart'>Carrito</ScLinkNav>
     </ScNavbarOpenContainer>
   )
 }
