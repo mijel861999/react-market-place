@@ -29,6 +29,26 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     background: ${({ theme }) => theme.text};
   }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `
 export default GlobalStyles
 
